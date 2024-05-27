@@ -7,22 +7,9 @@
 
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-  <h1> It Works! </h1>
-
-
-  <div id="messages">
-
-    @each((message) in render)
-    <p>{{ message }}</p>
+  <body>
+    @each((channel) in channels)
+      <a href="/chat/{{channel}}">chat</a>
     @end
-  </div>
-
-  <form id="message_form">
-    <input type="text" name="username">
-    <input type="text" id="message" name="message">
-    {{ csrfField() }}
-    <button type="submit">submit</button>
-  </form>
-</body>
+  </body>
 </html>
